@@ -13,57 +13,9 @@ public class AnalizaJavascript2 {
 	}
 
 	public static void main(String[] args) throws IOException {
-	//Activar la siguiente línea y comentar la anterior para hacerlo todo de una vez
+	//Activar la siguiente lÃ­nea y comentar la anterior para hacerlo todo de una vez
 	//public static String ObtenerDatos(String archivo) {   	
-    	
-		String archivos[] = new String[40];
-		archivos[0] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosCalculadora.js";
-		archivos[1] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosCalculadoraO1.js";
-		archivos[2] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosCalculadoraO2.js";
-		archivos[3] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosCalculadoraO3.js";
-		archivos[4] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosCalculadoraO4.js";
-		
-		archivos[5] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosCalendario.js";
-		archivos[6] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosCalendarioO1.js";
-		archivos[7] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosCalendarioO2.js";
-		archivos[8] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosCalendarioO3.js";
-		archivos[9] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosCalendarioO4.js";
-		
-		archivos[10] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosDiapositivas.js";
-		archivos[11] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosDiapositivasO1.js";
-		archivos[12] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosDiapositivasO2.js";
-		archivos[13] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosDiapositivasO3.js";
-		archivos[14] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosDiapositivasO4.js";
-		
-		archivos[15] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosGoogle.js";
-		archivos[16] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosGoogleO1.js";
-		archivos[17] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosGoogleO2.js";
-		archivos[18] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosGoogleO3-nova.js";
-		archivos[19] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosGoogleO4.js";
-		
-		archivos[20] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosReloj.js";
-		archivos[21] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosRelojO1.js";
-		archivos[22] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosRelojO2.js";
-		archivos[23] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosRelojO3.js";
-		archivos[24] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosRelojO4.js";
-		
-		archivos[25] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosTetris.js";
-		archivos[26]= "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosTetrisO1.js";
-		archivos[27] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosTetrisO2.js";
-		archivos[28] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosTetrisO3.js";
-		archivos[29] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosTetrisO4.js";
-		
-		archivos[30] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosWikipedia.js";
-		archivos[31] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosWikipediaO1.js";
-		archivos[32] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosWikipediaO2.js";
-		archivos[33] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosWikipediaO3.js";
-		archivos[34] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosWikipediaO4.js";
-		
-		archivos[35] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosYoutube.js";
-		archivos[36] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosYoutubeO1.js";
-		archivos[37] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosYoutubeO2.js";
-		archivos[38] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosYoutubeO3.js";
-		archivos[39] = "D:/Users/Lucas/Desktop/CodigosParaAnalizar/resultadosYoutubeO4.js";
+    
     	
 		try {
 			File outFile = new File("D:/Users/Lucas/Desktop/datos.txt");
@@ -77,12 +29,12 @@ public class AnalizaJavascript2 {
     	
 
     	
-//------Tamaño del documento-----------------------------------------------------------------------------------------    	
+//------TamaÃ±o del documento-----------------------------------------------------------------------------------------    	
     	
     	int numcaracter = archivolength(archivo);
-    	System.out.println("El tamaño del archivo es de: " +numcaracter+ " caracteres");
+    	System.out.println("El tamaÃ±o del archivo es de: " +numcaracter+ " caracteres");
     	writer.write(numcaracter + " ");
-    	solution = solution + "El tamaño del archivo es de: " +numcaracter+ " caracteres" +"\n";
+    	solution = solution + "El tamaÃ±o del archivo es de: " +numcaracter+ " caracteres" +"\n";
     	
 //------Ratio of string definitions and string uses------------------------------------------------------------------
 
@@ -105,7 +57,7 @@ public class AnalizaJavascript2 {
         	solution = solution + "Ratio of string definitions and string uses: " + ratio +"\n";
         }
         
-//------Ratio of string definitions and string uses (Método 2)-------------------------------------------------------
+//------Ratio of string definitions and string uses (MÃ©todo 2)-------------------------------------------------------
         
         String [] ssarg = extraeargumentos(archivo, "substring");
         String [] fccarg = extraeargumentos(archivo, "fromCharCode");
@@ -199,12 +151,12 @@ public class AnalizaJavascript2 {
         
 //------Divisiones de String-----------------------------------------------------------------------------------------
         
-        //buscamos la cadena ["+"] que identificaría posibles strings formados por substrings
+        //buscamos la cadena ["+"] que identificarÃ­a posibles strings formados por substrings
         String divstr = '\u0022'+"+"+'\u0022';
         int ds1 = cuentapalabra(archivo, divstr);
         int ds2 = cuentapalabra(archivo, "split()");
         
-        //buscamos "" correspondiente a un string vacío
+        //buscamos "" correspondiente a un string vacÃ­o
         String vacio = '\u0022'+""+'\u0022';
         int ds3 = cuentapalabra(archivo, vacio);
         
@@ -248,7 +200,7 @@ public class AnalizaJavascript2 {
 	}
 	
 //-------------------------------------------------------------------------------------------------------------------
-//----  MÉTODOS  ---------------------------------------------------------------------------------------------------- 
+//----  MÃ‰TODOS  ---------------------------------------------------------------------------------------------------- 
 //-------------------------------------------------------------------------------------------------------------------
 		
 	public static int cuentapalabra(String archivo, String palabra) throws FileNotFoundException, IOException {
@@ -258,7 +210,7 @@ public class AnalizaJavascript2 {
         b = new BufferedReader(f);
     	int j=0;
     	
-    	//Opción por palabras: no funciona 
+    	//OpciÃ³n por palabras: no funciona 
 		/*String cadena;
         while((cadena = b.readLine())!=null) {
             //System.out.println(cadena);
@@ -272,7 +224,7 @@ public class AnalizaJavascript2 {
             }
         }*/
     	
-    	//Opción por carácteres
+    	//OpciÃ³n por carÃ¡cteres
     	int caracter;
     	while((caracter = b.read()) != -1) {
         	
