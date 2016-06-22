@@ -100,7 +100,7 @@ public class Interfaz extends JFrame implements ActionListener {
         panelArriba.setBackground(Color.white);
         panelArriba.setMaximumSize(new Dimension (450, 100));
         
-        introduce = new JLabel("Introduce la URL completa de la página web:");
+        introduce = new JLabel("Introduce la URL completa de la pÃ¡gina web:");
 		panelArriba.add(introduce, BorderLayout.NORTH);
 		
 		campo = new JTextField();
@@ -192,98 +192,5 @@ public class Interfaz extends JFrame implements ActionListener {
         	}
         }
 	}
-	
-	/*public void ObtenerJavaScript(String URL){
-        
-		try {
-			
-        	//BrowserVersion navegador = BrowserVersion.FIREFOX_24;
-        	//final WebClient webClient = new WebClient(navegador);
-        	final WebClient webClient = new WebClient();         
-            
-            final HtmlPage page = webClient.getPage(URL);
-    		webClient.waitForBackgroundJavaScript(3000);
-
-    		
-    		//Obtenemos los elementos tipo script    
-    		DomNodeList <DomElement> nodeList = page.getElementsByTagName("script");
-    		
-    		//Inicializamos el escritor para obtener el .txt con los resultados
-    		try {
-    			File outFile = new File("D:/Users/Lucas/Desktop/resultados.js");
-    			BufferedWriter writer = new BufferedWriter(new FileWriter(outFile));
-            
-            //Imprimimos el contenido de estos elementos
-                     
-         	int i;
-            for (i=0; i<nodeList.size(); i++) {
-            	
-            	//Si el código no está contenido en el HTML, leemos el contenido del .js
-            	if (nodeList.get(i).getTextContent().isEmpty()){
-            		String enlace;
-            		//enlace = "file:///D:/Users/Lucas/Desktop/codigo.js";
-            		
-            		//Comprobamos si el .js está dado por una URL completa o no y determinamos el enlace 
-            		if (nodeList.get(i).getAttribute("src").startsWith("http")){
-                		enlace = nodeList.get(i).getAttribute("src");
-            		}	else{
-            				enlace = URL + nodeList.get(i).getAttribute("src");
-            		}
-            		
-            		//Imprimimos el enlace y el contenido del .js
-            		//writer.write("Script " + (i+1) + " -> Contenido en: " + enlace + "\r\n\r\n");
-            		System.out.println("Script " + (i+1) + " -> Contenido en: " + enlace + "\n");        		
-            		try {
-           	         	//Se abre la conexión
-            			URL url = new URL(enlace);
-           	         	java.net.URLConnection conexion = url.openConnection();
-           	         	conexion.connect();
-           	         
-           	         	//Lectura
-           	         	java.io.InputStream is = conexion.getInputStream();
-           	         	BufferedReader br = new BufferedReader(new InputStreamReader(is));
-           	         	char[] buffer = new char[1000];
-           	         	int leido;
-           	         	
-           	         	//Escritura
-           	         	while ((leido = br.read(buffer)) > 0) {
-           	         		System.out.println(new String(buffer, 0, leido));
-           	         		writer.write(new String(buffer, 0, leido));
-           	         	}
-           	         	System.out.println("\n");
-           	         	writer.write("\r\n\r\n");
-           	         	
-           	      	} catch (MalformedURLException e) {
-           	         e.printStackTrace();
-           	      	} catch (IOException e) {
-           	         e.printStackTrace();
-           	      	}	
-            		
-            	}	
-            	//Si el script no está vacío, quiere decir que el código se incluye en el HTML y directamente lo imprimimos
-            	else{
-            		System.out.println("Script " + (i+1) + "\n" + nodeList.get(i).getTextContent() + "\n");
-            		//Las dos lineas comentadas a continuación es para que los resultados no tengan espacios artificiales
-            		//writer.write("Script " + (i+1) + "\r\n\r\n");
-            		writer.write(nodeList.get(i).getTextContent());
-            		//writer.write("\r\n\r\n");
-            	}
-            }
-        
-        System.out.println ("Todo terminado OK " + page);
-        //writer.write("Todo terminado OK " + page);
-    		
-        	//Finalizamos el escritor
-        		writer.close();
-    		} catch (IOException e) {
-    			System.err.println(e);
-    			System.exit(1);
-    		}
-    		
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-		
-	}*/
 
 }
